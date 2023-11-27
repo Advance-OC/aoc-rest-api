@@ -5,7 +5,7 @@ const dotenv = require("dotenv");
 const credentials = require("./middleware/credentials");
 const corsOptions = require("./config/corsOptions");
 
-const PORT = 3001;
+const PORT = process.env.PORT || 3001;
 const app = express();
 dotenv.config();
 connectDb();
