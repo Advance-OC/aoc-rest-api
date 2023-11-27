@@ -10,7 +10,7 @@ const app = express();
 dotenv.config();
 connectDb();
 
-app.use(credentials);
+// app.use(credentials);
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
