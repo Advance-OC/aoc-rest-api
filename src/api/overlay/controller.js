@@ -1,11 +1,10 @@
 const { getWorkbook, getSheet, getRows } = require("../../utils");
-const overlayData = require("../data/overlayData");
-const { sheetNames } = require("./constants");
+const { sheetNames, dictionary } = require("./constants");
 const { Overlay } = require("./model");
 
 const getOverlayData = async (_req, res) => {
 	try {
-		res.json(overlayData);
+		res.json(dictionary);
 	} catch (err) {
 		res.status(500).json(err.message);
 	}

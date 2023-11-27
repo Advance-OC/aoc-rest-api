@@ -4,8 +4,7 @@ const {
 	getRows,
 	getContentKey,
 } = require("../../utils");
-const baselayerData = require("../data/baseLayerData");
-const { requiredSheets } = require("./constants");
+const { requiredSheets, dictionary } = require("./constants");
 const { Baselayer } = require("./model");
 const baselayerRepo = require("./repository");
 const {
@@ -608,7 +607,7 @@ const getScorecardData = async (req, res) => {
 
 const getBaselayersDictionary = async (_req, res) => {
 	try {
-		res.json(baselayerData);
+		res.json(dictionary);
 	} catch (err) {
 		res.status(500).json(err.message);
 	}
