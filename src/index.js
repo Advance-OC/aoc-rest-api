@@ -2,6 +2,7 @@ const express = require("express");
 const cors = require("cors");
 const connectDb = require("./config/db");
 const dotenv = require("dotenv");
+const verifyToken = require("./middleware/verifyToken");
 
 const PORT = process.env.PORT || 3001;
 const app = express();
@@ -20,10 +21,12 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.use("/", require("./api/health"));
+app.use(verifyToken);
 app.use("/baselayers", require("./api/baselayer"));
 app.use("/overlays", require("./api/overlay"));
 
 app.use((err, _req, res, _next) => {
+	console.log(err);
 	res.status(500).json(err.message);
 });
 
