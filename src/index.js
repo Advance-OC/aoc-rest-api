@@ -2,11 +2,11 @@ const express = require("express");
 const cors = require("cors");
 const connectDb = require("./config/db");
 const dotenv = require("dotenv");
+dotenv.config();
 const verifyToken = require("./middleware/verifyToken");
 
 const PORT = process.env.PORT || 3001;
 const app = express();
-dotenv.config();
 connectDb();
 
 app.use(
