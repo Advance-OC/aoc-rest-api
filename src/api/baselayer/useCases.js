@@ -47,9 +47,9 @@ const getPerformance = (performance) => {
 
 const compareRank = (currentTract, previousTract, contentKey) => {
 	try {
-		const rank = currentTract?.["spi"]?.[contentKey]?.["ranking"];
-		const previousRank = previousTract?.spi?.[contentKey]?.ranking;
-		return rank && previousRank ? previousRank - rank : "N/A";
+		const value = currentTract?.["spi"]?.[contentKey]?.["value"];
+		const previousValue = previousTract?.spi?.[contentKey]?.["value"];
+		return value && previousValue ? value - previousValue : "N/A";
 	} catch (err) {
 		throw new Error(err.message);
 	}
