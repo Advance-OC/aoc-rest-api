@@ -23,7 +23,7 @@ const dictionary = [
 		content_key: "s_rapi",
 		title_key: "baselayer_spi_s_rapi",
 		title: "Rental Assistance Priority Index",
-		parent: "bhn",
+		parent: "housing",
 		level: 3,
 	},
 	{
@@ -32,7 +32,7 @@ const dictionary = [
 		content_key: "ws_groundwater",
 		title_key: "baselayer_spi_ws_groundwater",
 		title: "Groundwater",
-		parent: "bhn",
+		parent: "ws",
 		level: 3,
 	},
 	{
