@@ -692,7 +692,9 @@ const createBaselayersData = async (req, res) => {
 				}
 			}
 			const geoId = obj.censusTract;
-			censusTracts[geoId]["cdc"] = removeCensusTractField(obj);
+			if (censusTracts[geoId]) {
+				censusTracts[geoId]["cdc"] = removeCensusTractField(obj);
+			}
 		});
 
 		// add spi data
