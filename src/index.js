@@ -23,6 +23,7 @@ app.use("/", require("./api/health"));
 app.use(verifyToken);
 app.use("/baselayers", require("./api/baselayer"));
 app.use("/overlays", require("./api/overlay"));
+app.use("/map", require("./api/map"));
 
 app.use((err, _req, res, _next) => {
 	console.log(err);
