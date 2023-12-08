@@ -1,14 +1,12 @@
 const axios = require("axios");
 
-const API_KEY = "AIzaSyA5RZrcYf3X6Q-sXjXD-mllebH8Unyr1lg";
-
 const getPlaceCensusTract = async (req, res) => {
 	try {
 		const { placeId } = req.params;
 
 		const fields = "geometry/location";
 		const googleResponse = await axios.get(
-			`https://maps.googleapis.com/maps/api/place/details/json?placeid=${placeId}&fields=${fields}&key=${API_KEY}`
+			`https://maps.googleapis.com/maps/api/place/details/json?placeid=${placeId}&fields=${fields}&key=AIzaSyA5RZrcYf3X6Q-sXjXD-mllebH8Unyr1lg`
 		);
 		const { lat: latitude, lng: longitude } =
 			googleResponse.data.result.geometry.location;
