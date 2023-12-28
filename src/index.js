@@ -19,7 +19,7 @@ app.use(
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-app.use("/", require("./api/health"));
+app.use("/health", require("./api/health"));
 app.use(verifyToken);
 app.use("/baselayers", require("./api/baselayer"));
 app.use("/overlays", require("./api/overlay"));
